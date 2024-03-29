@@ -14,7 +14,7 @@ namespace MultiShop.Catalog.Services.ProductServices
         {
             var client = new MongoClient(_databasesettings.ConnectionString);
             var database = client.GetDatabase(_databasesettings.DatabaseName);
-            _productCollection = database.GetCollection<Product>(_databasesettings.ProductDetailCollectionName);
+            _productCollection = database.GetCollection<Product>(_databasesettings.ProductCollectionName);
             _mapper = mapper;
         }
 
