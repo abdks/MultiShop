@@ -6,7 +6,7 @@ using MultiShop.Catalog.Services.ProductServices;
 
 namespace MultiShop.Catalog.Controllers
 {
-    [Authorize]
+    [AllowAnonymous] // authorize kaldırıldı şimdilik
 
     [Route("api/[controller]")]
     [ApiController]
