@@ -8,9 +8,9 @@ using MultiShop.Catalog.Services.CategoryServices;
 namespace MultiShop.Catalog.Controllers
 {
     [Authorize]
+
     [Route("api/[controller]")]
     [ApiController]
-    [AllowAnonymous]  //sonradan eklendi
     public class CategoriesController : ControllerBase
     {
         private readonly ICategoryService _categoryService;
