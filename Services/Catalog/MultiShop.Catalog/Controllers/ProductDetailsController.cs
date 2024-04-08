@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MultiShop.Catalog.Dtos.ProductDetailDtos;
-using MultiShop.Catalog.Services.ProductDetailServices;
+using MultiShop.Catalog.Services.ProductDetailService;
 
 namespace MultiShop.Catalog.Controllers
 {
@@ -19,7 +19,7 @@ namespace MultiShop.Catalog.Controllers
         [HttpGet]
         public async Task<IActionResult> productDetailList()
         {
-            var values = await _productDetailService.GetAllProductDetailAsync();
+            var values = await _productDetailService.GettAllProductDetailAsync();
             return Ok(values);
         }
         [HttpGet("{id}")]
@@ -45,6 +45,12 @@ namespace MultiShop.Catalog.Controllers
         {
             await _productDetailService.UpdateProductDetailAsync(updateProductDetailDto);
             return Ok("Kategori Güncellendi");
+        }
+          [HttpGet("GetProductDetailByProductId")]
+        public async Task<IActionResult> GetProductDetailByProductId(string id)
+        {
+            var values = await _productDetailService.GetByProductIdProductDetailAsync(id);
+            return Ok(values);
         }
     }
 }
