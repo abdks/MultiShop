@@ -44,7 +44,7 @@ namespace MultiShop.WebUI.ViewComponents.UILayoutViewComponents
             var client = _httpClientFactory.CreateClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-            var responseMessage = await client.GetAsync("https://localhost:7270/api/Categories");
+            var responseMessage = await client.GetAsync("http://localhost:7270/api/Categories");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
