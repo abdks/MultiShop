@@ -2,11 +2,10 @@
 
 namespace MultiShop.Basket.Services
 {
-    public interface IBasketServices
+    public interface IBasketService
     {
-        Task<BasketTotalDto> GetBasket(string UserId);
+        Task<BasketTotalDto> GetBasket(string userId);
         Task SaveBasket(BasketTotalDto basketTotalDto);
-        Task DeleteBasket(string UserId);
-
+        Task DeleteBasket(string userId);
     }
 }

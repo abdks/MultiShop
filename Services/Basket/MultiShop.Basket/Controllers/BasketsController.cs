@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MultiShop.Basket.Dtos;
-using MultiShop.Basket.Dtos.LoginServices;
+using MultiShop.Basket.LoginServices;
 using MultiShop.Basket.Services;
+using System.Security.Claims;
 
 namespace MultiShop.Basket.Controllers
 {
@@ -10,14 +11,15 @@ namespace MultiShop.Basket.Controllers
     [ApiController]
     public class BasketsController : ControllerBase
     {
-        private readonly IBasketServices _basketService;
+        private readonly IBasketService _basketService;
         private readonly ILoginService _loginService;
 
-        public BasketsController(IBasketServices services, ILoginService loginService)
+        public BasketsController(IBasketService basketService, ILoginService loginService)
         {
-            _basketService = services;
+            _basketService = basketService;
             _loginService = loginService;
         }
+
         [HttpGet]
         public async Task<IActionResult> GetMyBasketDetail()
         {
@@ -42,4 +44,3 @@ namespace MultiShop.Basket.Controllers
         }
     }
 }
-
