@@ -1,4 +1,4 @@
-﻿namespace MultiShop.Catalog.Dtos.FeatureDtos
+﻿namespace MultiShop.DtoLayer.CatalogDtos.FeatureDtos
 {
     public class CreateFeatureDto
     {
