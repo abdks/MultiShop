@@ -43,4 +43,4 @@ namespace MultiShop.WebUI.Services.CatalogServices.ProductDetailServices
             return values;
         }
     }
-}
+}//bak
