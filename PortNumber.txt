@@ -13,6 +13,32 @@
 
 
 
+
+
+
+
+{
+  "userId": "bce6e993-d7a9-42d2-b097-af7584c08e65",
+  "discountCode": "yok",
+  "discountRate": 0,
+  "basketItems": [
+    {
+      "productId": "1",
+      "productName": "a",
+      "quantity": 1,
+      "price": 20
+    },
+     {
+      "productId": "2",
+      "productName": "b",
+      "quantity": 2,
+      "price": 18
+    }
+  ]
+}
+
+
+
 -----------------------------
 
     //Discount Mikroservis

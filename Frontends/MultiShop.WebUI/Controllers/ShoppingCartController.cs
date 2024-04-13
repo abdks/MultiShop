@@ -14,11 +14,17 @@ namespace MultiShop.WebUI.Controllers
             _productService = productService;
             _basketService = basketService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             ViewBag.directory1 = "Ana Sayfa";
             ViewBag.directory2 = "Ürünler";
             ViewBag.directory3 = "Sepetim";
+            var values = await _basketService.GetBasket();
+            ViewBag.total = values.TotalPrice;
+            var totalPriceWithTax = values.TotalPrice + values.TotalPrice / 100 * 10;
+            var tax = values.TotalPrice / 100 * 10;
+            ViewBag.totalPriceWithTax = totalPriceWithTax;
+            ViewBag.tax = tax;
             return View();
         }
 
@@ -30,9 +36,10 @@ namespace MultiShop.WebUI.Controllers
             {
                 ProductId = values.ProductId,
                 ProductName = values.ProductName,
+                ProductImageUrl = values.ProductImageUrl,
                 Price = values.ProductPrice,
-                Quantity = 1,
-                ProductImageUrl = values.ProductImageUrl
+                Quantity = 1
+                
             };
             await _basketService.AddBasketItem(items);
             return RedirectToAction("Index");

@@ -34,7 +34,7 @@ namespace MultiShop.WebUI.Services.BasketServices
 
         public async Task<BasketTotalDto> GetBasket()
         {
-            var responseMessage = await _httpClient.GetAsync("basket");
+            var responseMessage = await _httpClient.GetAsync("baskets");
             var values = await responseMessage.Content.ReadFromJsonAsync<BasketTotalDto>();
             return values;
         }
