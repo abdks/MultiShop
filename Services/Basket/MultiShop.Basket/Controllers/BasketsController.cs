@@ -9,6 +9,7 @@ namespace MultiShop.Basket.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class BasketsController : ControllerBase
     {
         private readonly IBasketService _basketService;
