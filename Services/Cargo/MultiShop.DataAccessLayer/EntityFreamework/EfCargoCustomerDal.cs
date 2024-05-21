@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Query.Internal;
+﻿
 using MultiShop.Cargo.EntityLayer.Concrete;
 using MultiShop.DataAccessLayer.Abstract;
 using MultiShop.DataAccessLayer.Concrete;
@@ -9,13 +9,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MultiShop.DataAccessLayer.EntityFreamework
+namespace MultiShop.Cargo.DataAccessLayer.EntityFramework
 {
     public class EfCargoCustomerDal : GenericRepository<CargoCustomer>, ICargoCustomerDal
     {
-        public EfCargoCustomerDal(CargoContext context): base(context)
+        private readonly CargoContext _cargoContext;
+        public EfCargoCustomerDal(CargoContext context, CargoContext cargoContext) : base(context)
         {
-            
+            _cargoContext = cargoContext;
+        }
+        public CargoCustomer GetCargoCustomerById(string id)
+        {
+            var values = _cargoContext.CargoCustomers.Where(x => x.UserCustomerId == id).FirstOrDefault();
+            return values;
         }
     }
 }
