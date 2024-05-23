@@ -4,6 +4,7 @@ namespace MultiShop.Message.Services
 {
     public interface IUserMessageService
     {
+
         Task<List<ResultMessageDto>> GetAllMessageAsync();
         Task<List<ResultInboxMessageDto>> GetInboxMessageAsync(string id);
         Task<List<ResultSendboxMessageDto>> GetSendboxMessageAsync(string id);
