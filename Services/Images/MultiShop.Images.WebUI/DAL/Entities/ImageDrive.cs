@@ -9,6 +9,7 @@ namespace MultiShop.Images.WebUI.DAL.Entities
 
 
 
+
         public IFormFile? Photo { get; set; }
         public string? SavedUrl { get; set; }
 
