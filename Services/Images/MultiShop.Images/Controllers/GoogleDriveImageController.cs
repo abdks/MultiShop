@@ -10,5 +10,7 @@ namespace MultiShop.Images.Controllers
     [ApiController]
     public class GoogleDriveImageController : ControllerBase
     {
+
+
     }
 }
